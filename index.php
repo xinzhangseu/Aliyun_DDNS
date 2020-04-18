@@ -1,7 +1,7 @@
 <?php
 /**
  *
- *    °¢ÀïÔÆDDNS-API By D-Jy
+ *    é˜¿é‡Œäº‘DDNS-API By D-Jy
  *
  *    MIT License
  *
@@ -14,53 +14,53 @@ include_once 'alicloud-php-updaterecord/V20150109/AlicloudUpdateRecord.php';
 use Roura\Alicloud\V20150109\AlicloudUpdateRecord;
 
 /**
- *Ê¹ÓÃËµÃ÷
+ *ä½¿ç”¨è¯´æ˜Ž
  *eg. http://xxx.com/?ip=127.0.0.1&name=d-jy.net&type=A&rr=www
- *URLÎ´Ö¸¶¨²ÎÊýÊ±×Ô¶¯½âÎöµ±Ç°Éè±¸ip eg. http://xxx.com
+ *URLæœªæŒ‡å®šå‚æ•°æ—¶è‡ªåŠ¨è§£æžå½“å‰è®¾å¤‡ip eg. http://xxx.com
  */
 
-//²ÎÊýËµÃ÷£º
-//data	¼ÇÂ¼Öµ	eg. x.x.x.x or xxx.com ....
-//name	¸ùÓòÃû	eg. d-jy.net
-//type	½âÎöÀàÐÍ	eg. A CNAME....
-//rr	¶þ¼¶ÓòÃû	eg. @ www ....
+//å‚æ•°è¯´æ˜Žï¼š
+//data	è®°å½•å€¼	eg. x.x.x.x or xxx.com ....
+//name	æ ¹åŸŸå	eg. d-jy.net
+//type	è§£æžç±»åž‹	eg. A CNAME....
+//rr	äºŒçº§åŸŸå	eg. @ www ....
 
 //id	AccessKeyId
 //secret 	AccessKeySecret
 
 
-//ÉèÖÃ¿ªÊ¼
+//è®¾ç½®å¼€å§‹
 
-//ÒÔÏÂÉèÖÃÔÚURLÖÐÎ´¶¨ÒåÊ±ÉúÐ§
-$Name	= 'd-jy.net';	//Ö¸¶¨¸ùÓòÃû   eg. d-jy.net
-$Type	= 'A';		//Ö¸¶¨½âÎöÀàÐÍ eg. A CNAME....
-$rr	= 'www';		//Ö¸¶¨Ö÷»ú¼ÇÂ¼ eg. @ www ....
-
-//ÒÔÏÂÉèÖÃÁô¿ÕÔòÍøÒ³»ñÈ¡
+//ä»¥ä¸‹è®¾ç½®åœ¨URLä¸­æœªå®šä¹‰æ—¶ç”Ÿæ•ˆ
+$Name	= 'd-jy.net';	//æŒ‡å®šæ ¹åŸŸå   eg. d-jy.net
+$Type	= 'A';		//æŒ‡å®šè§£æžç±»åž‹ eg. A CNAME....
+$rr	= 'www';		//æŒ‡å®šä¸»æœºè®°å½• eg. @ www ....
+ 
+//ä»¥ä¸‹è®¾ç½®ç•™ç©ºåˆ™ç½‘é¡µèŽ·å–
 $AccessKeyId	= '';
 $AccessKeySecret	= '';
 
-//ÉèÖÃ½áÊø
+//è®¾ç½®ç»“æŸ
 
 
-//ÒÔÏÂÄÚÈÝ½÷É÷ÐÞ¸Ä
+//ä»¥ä¸‹å†…å®¹è°¨æ…Žä¿®æ”¹
 
-$ip		= $_GET['ip'];	//»ñÈ¡IP
-$data		= $_GET['data'];	//»ñÈ¡DATA
-$KeyId		= $_GET['id'];	//»ñÈ¡AccessKeyId
-$KeySecret	= $_GET['secret'];	//»ñÈ¡AccessKeySecret
+$ip		= $_GET['ip'];	//èŽ·å–IP
+$data		= $_GET['data'];	//èŽ·å–DATA
+$KeyId		= $_GET['id'];	//èŽ·å–AccessKeyId
+$KeySecret	= $_GET['secret'];	//èŽ·å–AccessKeySecret
 
-$DomainName	= $_GET['name'];	//»ñÈ¡ÓòÃû
-$RecordType	= $_GET['type'];	//»ñÈ¡½âÎöÀàÐÍ eg. A CNAME....
-$RR	 	= $_GET['rr'];	//»ñÈ¡½âÎö¼ÇÂ¼
+$DomainName	= $_GET['name'];	//èŽ·å–åŸŸå
+$RecordType	= $_GET['type'];	//èŽ·å–è§£æžç±»åž‹ eg. A CNAME....
+$RR	 	= $_GET['rr'];	//èŽ·å–è§£æžè®°å½•
 
 $test		= $_GET['debug'];	//Debug
 
 $updater         = new AlicloudUpdateRecord($AccessKeyId, $AccessKeySecret);
 
-	//Èç¹ûIP²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœIPä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($ip) || ($ip == ''))) {
-		//»ñÈ¡IP
+		//èŽ·å–IP
 		if(!empty($_SERVER['HTTP_CLIENT_IP'])){
 		   $ip = $_SERVER['HTTP_CLIENT_IP'];
 		}else if(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
@@ -70,28 +70,28 @@ $updater         = new AlicloudUpdateRecord($AccessKeyId, $AccessKeySecret);
 		}  
 	}
 
-	//Èç¹ûdata²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœdataä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($data) || ($data == ''))) {
 		$data = $ip;
 	}
-	//Èç¹ûKeyId²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœKeyIdä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($AccessKeyId) || ($AccessKeyId == ''))) {
 		$AccessKeyId = $KeyId;
 	}
-	//Èç¹ûKeySecret²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœKeySecretä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($AccessKeySecret) || ($AccessKeySecret == ''))) {
 		$AccessKeySecret = $KeySecret;
 	}
 
-	//Èç¹ûDomainName²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœDomainNameä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($DomainName) || ($DomainName == ''))) {
 		$DomainName = $Name;
 	}
-	//Èç¹ûRecordType²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœRecordTypeä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($RecordType) || ($RecordType == ''))) {
 		$RecordType = $Type;
 	}
-	//Èç¹ûRR²»´æÔÚ»òÕßÎª¿Õ
+	//å¦‚æžœRRä¸å­˜åœ¨æˆ–è€…ä¸ºç©º
 	if((!isset($RR) || ($RR == ''))) {
 		$RR = $rr;
 	}
