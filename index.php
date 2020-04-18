@@ -9,7 +9,7 @@
 
 date_default_timezone_set('UTC');
 
-include_once 'alicloud-php-updaterecord/V20150109/AlicloudUpdateRecord.php';
+include_once 'AlicloudUpdateRecord.php';
 
 use Roura\Alicloud\V20150109\AlicloudUpdateRecord;
 
