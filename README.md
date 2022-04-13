@@ -1,4 +1,4 @@
-# 阿里云 DDNS By D-Jy
+# 阿里云 Aliyun DDNS By D-Jy
 #
 ## 使用说明
 ### eg. http://xxx.com/?ip=127.0.0.1&name=d-jy.net&type=A&rr=www
