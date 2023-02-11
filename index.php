@@ -32,9 +32,9 @@ use Roura\Alicloud\V20150109\AlicloudUpdateRecord;
 //设置开始
 
 //以下设置在URL中未定义时生效
-$Name	= 'd-jy.net';	//指定根域名   eg. d-jy.net
+$Name	= 'xzhang.ink';	//指定根域名   eg. d-jy.net
 $Type	= 'A';		//指定解析类型 eg. A CNAME....
-$rr	= 'www';		//指定主机记录 eg. @ www ....
+$rr	= '@';		//指定主机记录 eg. @ www ....
  
 //以下设置留空则网页获取
 $AccessKeyId	= '';
